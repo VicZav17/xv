@@ -1,0 +1,25 @@
+.parallax {
+  min-height: 90vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+.bg1 { background-image: url('hero.jpg'); }
+.bg2 { background-image: url('flowers.jpg'); }
+
+.normal {
+  padding: 40px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.content {
+  text-align: center;
+  font-size: 24px;
+}

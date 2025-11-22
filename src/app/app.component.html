@@ -1,4 +1,4 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <ul
     style="
       list-style: none;
@@ -31,16 +31,77 @@
       </a>
     </li>
   </ul>
-</mat-toolbar>
+</mat-toolbar> -->
 
-<mat-card
-  [appearance]="'raised'"
-  style="background-color: #111c2d; margin-top: 20px"
->
+
+<section class="parallax bg15">
+  <img
+      src="imgs/1.jpeg"
+      alt="Mobile Image"
+      class="mobile-image"
+    />
+
+</section>
+
+<section class="parallax bg15">
+  <img
+      src="imgs/a.jpg"
+      alt="Mobile Image"
+      class="mobile-image"
+    />
+</section>
+<section class="parallax bg15">
+  <img
+      src="imgs/6.jpg"
+      alt="Mobile Image"
+      class="mobile-image"
+    />
+</section>
+
+<section class="parallax bg15">
+  <img
+      src="imgs/15.jpeg"
+      alt="Mobile Image"
+      class="mobile-image"
+    />
+
+</section>
+
+<section class="normal">
+  <h2>Detalles del Evento</h2>
+  <p>Fecha: 14 Marzo 2026</p>
+  <p>Lugar: Salón Jardín La Primavera</p>
+</section>
+
+<section class="parallax bg2">
+  <div class="content">
+    <h1>XV Años de Valentina</h1>
+    <p>Te invitamos a celebrar un día muy especial</p>
+  </div>
+</section>
+
+<section class="normal">
+  <h2>Detalles del Evento</h2>
+  <p>Fecha: 14 Marzo 2026</p>
+  <p>Lugar: Salón Jardín La Primavera</p>
+</section>
+
+<section class="parallax bg2">
+  <div class="content">
+    <h2>Programa</h2>
+    <p>18:00 - Recepción</p>
+    <p>19:00 - Ceremonia</p>
+    <p>20:30 - Cena y Baile</p>
+  </div>
+</section>
+
+<section class="normal">
+  <h2>Confirmación</h2>
+  <p>Favor de confirmar tu asistencia</p>
+</section>
   <!-- Banner con la imagen GIF y texto superior e inferior -->
 
-  <mat-card-content id="home" style="font-size: larger; text-align: center">
-    <!-- Imagen para dispositivos móviles -->
+  <!-- <mat-card-content id="home" style="font-size: larger; text-align: center">
     <img
       src="imgs/dumbinfest2025.gif"
       alt="Mobile Image"
@@ -70,9 +131,9 @@
 
   <mat-card-content style="margin-top: 10px">
     <hr style="border: 1px solid white" />
-  </mat-card-content>
+  </mat-card-content> -->
 
-  <mat-card-content id="music">
+  <!-- <mat-card-content id="music">
     <mat-card-title align="center">
       <h4>En la música</h4>
     </mat-card-title>
@@ -171,36 +232,28 @@
         <h4>¡Cuenta Regresiva</h4>
       </mat-card-title>
 
-      <!-- Contenedor de los elementos (día, hora, minutos, segundos) -->
       <div class="time-container">
-        <!-- Card para Días -->
         <mat-card class="time-box">
           <div class="time-unit">{{ days | number : "2.0" }}</div>
           <div class="time-label">Días</div>
         </mat-card>
 
-        <!-- Separador -->
         <div class="separator">:</div>
 
-        <!-- Card para Horas -->
         <mat-card class="time-box">
           <div class="time-unit">{{ hours | number : "2.0" }}</div>
           <div class="time-label">Horas</div>
         </mat-card>
 
-        <!-- Separador -->
         <div class="separator">:</div>
 
-        <!-- Card para Minutos -->
         <mat-card class="time-box">
           <div class="time-unit">{{ minutes | number : "2.0" }}</div>
           <div class="time-label">Minutos</div>
         </mat-card>
 
-        <!-- Separador -->
         <div class="separator">:</div>
 
-        <!-- Card para Segundos -->
         <mat-card class="time-box">
           <div class="time-unit">{{ seconds | number : "2.0" }}</div>
           <div class="time-label">Segundos</div>
@@ -210,5 +263,4 @@
         <h4>para Dumbin Fest 2025!</h4>
       </mat-card-title>
     </div>
-  </mat-card-content>
-</mat-card>
+  </mat-card-content> -->
