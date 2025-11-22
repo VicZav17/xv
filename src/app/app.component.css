@@ -1,0 +1,224 @@
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    /* Distribuye los elementos de forma equitativa */
+    width: 100%;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  /* Estilo para el contenedor de la galería */
+  mat-grid-list {
+    margin: 16px 0;
+  }
+
+  /* Estilo para cada tarjeta de imagen */
+  .gallery-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  /* Efecto de hover sobre cada tarjeta */
+  .gallery-card:hover {
+    transform: scale(1.05);
+  }
+
+  /* Estilo para las imágenes dentro de las tarjetas */
+  .gallery-image {
+    width: 100%;
+    /* Asegura que la imagen ocupe el 100% del ancho de su contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+    object-fit: cover;
+    /* Asegura que la imagen cubra completamente el área del contenedor sin distorsionarse */
+  }
+
+  .pip {
+    width: 90%;
+    /* Asegura que la imagen ocupe el 90% del ancho de su contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+    object-fit: cover;
+    /* Asegura que la imagen cubra completamente el área del contenedor sin distorsionarse */
+    display: block;
+    /* Hace que la imagen se comporte como un bloque */
+    margin: 0 auto;
+    /* Centra la imagen horizontalmente */
+    border-radius: 8px;
+  }
+
+  /* Estilo para el cuadro de diálogo */
+  .dialog-container {
+    text-align: center;
+  }
+
+  .dialog-image {
+    width: 100%;
+    max-width: 600px;
+    /* Limita el tamaño máximo de la imagen en el cuadro de diálogo */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+    object-fit: contain;
+    /* Asegura que la imagen no se recorte en el cuadro de diálogo */
+  }
+
+  /* Ajustes para el botón en el diálogo */
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  /* Asegura que las imágenes en la galería no se sobrepasen */
+  mat-grid-list mat-grid-tile {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Mejorar la visualización en pantallas pequeñas */
+  @media (max-width: 768px) {
+    mat-grid-list {
+      grid-template-columns: 1fr !important;
+      /* Coloca las imágenes en una sola columna en pantallas pequeñas */
+    }
+  }
+
+ 
+  /* Imagen para dispositivos móviles */
+  .mobile-image {
+    width: 100%;
+    /* Asegura que la imagen ocupe el 90% del ancho de su contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+    object-fit: cover;
+    /* Asegura que la imagen cubra completamente el área del contenedor sin distorsionarse */
+    display: block;
+    /* Hace que la imagen se comporte como un bloque */
+    margin: 0 auto;/* Centra la imagen horizontalmente */
+  }
+
+  /* Texto superior */
+  .top-text {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+  }
+
+  /* Texto inferior */
+  .bottom-text {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+  }
+
+  /* Estilo para asegurar que la imagen se muestre solo en dispositivos móviles */
+  .d-md-none {
+    display: none !important;
+  }
+
+  @media (max-width: 767px) {
+
+    /* Muestra la imagen y el texto solo en dispositivos móviles */
+    .d-md-none {
+      display: block !important;
+    }
+  }
+
+  #event {
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .time-container {
+    display: flex;
+    /* Flexbox para alinear los elementos en una fila */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
+    gap: 8px;
+    /* Espacio entre los elementos */
+    flex-wrap: nowrap;
+    /* Asegura que no se envuelvan en pantallas pequeñas */
+  }
+
+  .time-box {
+    background-color: #111c2d;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    /* Asegura que el contenido dentro de la caja esté alineado verticalmente */
+    justify-content: center;
+    /* Centra el contenido verticalmente dentro de la caja */
+  }
+
+  .time-unit {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .time-label {
+    font-size: 12px;
+    color: white;
+  }
+
+  .separator {
+    font-size: 20px;
+    padding: 4px;
+  }
+
+  @media (max-width: 600px) {
+
+    /* Para pantallas pequeñas, como teléfonos móviles */
+    #event {
+      font-size: 16px;
+      /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    }
+
+    .time-container {
+      flex-wrap: wrap;
+      /* Permite que los elementos se envuelvan en pantallas pequeñas */
+      gap: 4px;
+      /* Reduce el espacio entre los elementos */
+    }
+
+    .time-box {
+      min-width: 50px;
+      /* Ajusta el tamaño de las cajas de tiempo */
+    }
+
+    .time-unit {
+      font-size: 18px;
+      /* Reduce el tamaño de la fuente */
+    }
+
+    .time-label {
+      font-size: 10px;
+      /* Ajusta el tamaño de la fuente */
+    }
+  }

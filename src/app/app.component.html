@@ -1,0 +1,214 @@
+<mat-toolbar>
+  <ul
+    style="
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    "
+  >
+    <li>Dumbin Fest</li>
+    <li>
+      <a href="#home">
+        <mat-icon>home</mat-icon>
+      </a>
+    </li>
+    <li>
+      <a href="#music">
+        <mat-icon>music_note</mat-icon>
+      </a>
+    </li>
+    <li>
+      <a href="#galery">
+        <mat-icon>perm_media</mat-icon>
+      </a>
+    </li>
+    <li>
+      <a href="#event">
+        <mat-icon>event_upcoming</mat-icon>
+      </a>
+    </li>
+  </ul>
+</mat-toolbar>
+
+<mat-card
+  [appearance]="'raised'"
+  style="background-color: #111c2d; margin-top: 20px"
+>
+  <!-- Banner con la imagen GIF y texto superior e inferior -->
+
+  <mat-card-content id="home" style="font-size: larger; text-align: center">
+    <!-- Imagen para dispositivos móviles -->
+    <img
+      src="imgs/dumbinfest2025.gif"
+      alt="Mobile Image"
+      class="mobile-image"
+    />
+    <p>
+      Se acerca el tercer piso y con ello las ganas de festejar, agradecer y
+      celebrar con personas que han dejado huellas y memorias invaluables para
+      mí y mi familia.
+    </p>
+
+    <p>
+      Sigamos creando buenos momentos y acompáñame a celebrar mis 30 años este
+      próximo sábado 5 de abril a partir de las 19:00 hrs.
+    </p>
+    <div>
+      <p>En el lugar que me vio crecer: Marte #165, col. Rural Atlas, SLP</p>
+      <iframe
+        style="position: relative; width: 80%; height: 100px"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d388.3444250375565!2d-101.00907410299892!3d22.18022033212204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a9f13fe38b47f%3A0xf8d04476a4d44536!2sMarte%20165%2C%20Rural%20Atlas%201ra%20Secc%2C%2078130%20San%20Luis%20Potos%C3%AD%2C%20S.L.P.!5e0!3m2!1ses!2smx!4v1726207560074!5m2!1ses!2smx"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content style="margin-top: 10px">
+    <hr style="border: 1px solid white" />
+  </mat-card-content>
+
+  <mat-card-content id="music">
+    <mat-card-title align="center">
+      <h4>En la música</h4>
+    </mat-card-title>
+    <img
+      mat-card-image
+      [src]="images[1]"
+      alt="Imagen"
+      class="pip"
+      style="margin-top: 10px"
+    />
+    <mat-card-title align="center" style="margin-top: 10px">
+      <h4>Y también</h4>
+    </mat-card-title>
+
+    <img
+      mat-card-image
+      [src]="images[0]"
+      alt="Imagen"
+      class="pip"
+      style="margin-top: 10px"
+    />
+    <mat-card-content
+      style="
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <iframe
+        style="position: relative; width: 100%; height: 300px"
+        src="https://www.youtube.com/embed/67e3J-ybLEE?si=LfWqyLtXHqNRSEJk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe
+    ></mat-card-content>
+  </mat-card-content>
+
+  <mat-card-content style="margin-top: 10px">
+    <hr style="border: 1px solid white" />
+  </mat-card-content>
+
+  <mat-card-content id="galery">
+    <mat-card-title align="center">
+      <h4>Galería</h4>
+    </mat-card-title>
+    <mat-card-content>
+      <p style="font-size: larger; text-align: center">
+        Gracias por ser parte de mi historia y por hacer que esta fiesta sea
+        inolvidable. ¡Salud por lo que viene! #30YearsOfMadness 🎉🍻
+      </p>
+      <mat-grid-list cols="3" rowHeight="5:3" gutterSize="8px">
+        <mat-grid-tile *ngFor="let image of images2">
+          <mat-card class="gallery-card" (click)="openImage(image)">
+            <img
+              mat-card-image
+              [src]="image"
+              alt="Imagen"
+              class="gallery-image"
+            />
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <ng-template
+        #dialogContent
+        mat-dialog-content
+        style="background-color: #111c2d"
+      >
+        <div class="dialog-container">
+          <img
+            [src]="selectedImage"
+            alt="Imagen Ampliada"
+            class="dialog-image"
+          />
+          <div mat-dialog-actions align="end" style="background-color: #111c2d">
+            <button mat-button mat-dialog-close>Cerrar</button>
+          </div>
+        </div>
+      </ng-template>
+    </mat-card-content>
+  </mat-card-content>
+
+  <mat-card-content style="margin-top: 10px">
+    <hr style="border: 1px solid white" />
+  </mat-card-content>
+
+  <mat-card-content id="event" class="event">
+    <p>
+      PD: Si gustas, puedes traer tu sombrero <mat-icon>celebration</mat-icon>
+    </p>
+    <div *ngIf="day">
+      <mat-card-title>
+        <h4>¡Cuenta Regresiva</h4>
+      </mat-card-title>
+
+      <!-- Contenedor de los elementos (día, hora, minutos, segundos) -->
+      <div class="time-container">
+        <!-- Card para Días -->
+        <mat-card class="time-box">
+          <div class="time-unit">{{ days | number : "2.0" }}</div>
+          <div class="time-label">Días</div>
+        </mat-card>
+
+        <!-- Separador -->
+        <div class="separator">:</div>
+
+        <!-- Card para Horas -->
+        <mat-card class="time-box">
+          <div class="time-unit">{{ hours | number : "2.0" }}</div>
+          <div class="time-label">Horas</div>
+        </mat-card>
+
+        <!-- Separador -->
+        <div class="separator">:</div>
+
+        <!-- Card para Minutos -->
+        <mat-card class="time-box">
+          <div class="time-unit">{{ minutes | number : "2.0" }}</div>
+          <div class="time-label">Minutos</div>
+        </mat-card>
+
+        <!-- Separador -->
+        <div class="separator">:</div>
+
+        <!-- Card para Segundos -->
+        <mat-card class="time-box">
+          <div class="time-unit">{{ seconds | number : "2.0" }}</div>
+          <div class="time-label">Segundos</div>
+        </mat-card>
+      </div>
+      <mat-card-title>
+        <h4>para Dumbin Fest 2025!</h4>
+      </mat-card-title>
+    </div>
+  </mat-card-content>
+</mat-card>
